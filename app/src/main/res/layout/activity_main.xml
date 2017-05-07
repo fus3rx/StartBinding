@@ -7,6 +7,11 @@
     <data>
         <!--bind a data model directly with the layout-->
 
+        <variable
+            name="user"
+            type="com.imaginers.tonmo.startbinding.User"/>
+        <!--define what data you want to pass-->
+
     </data>
 
     <LinearLayout
@@ -16,10 +21,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/firstTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!" />
+            android:text="@{user.firstName}" />
+        <!--@ { … } allows you to access the instance properties-->
+
+        <TextView
+            android:id="@+id/lastTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
 
     </LinearLayout>
 </layout>

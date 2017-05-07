@@ -16,7 +16,11 @@ public class MainActivity extends AppCompatActivity {
         //inflates the layout with databinding
         ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
-        //finds view by binding
-        binding.textView.setText("Hey databinding works!");
+        //creates an instance of user class to pass data
+        User user = new User("Fahad","Hasan");
+
+//        <variable> tag generates a setter method to pass the instance of the model class
+        binding.setUser(user);
+
     }
 }
